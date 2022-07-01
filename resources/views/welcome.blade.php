@@ -3,11 +3,9 @@
 @section('title', 'Learn Laravel')
 
 @section('content')
+
+@include('layouts.nav')
         
-@include('navbar.nav')
-
-<div>
-
-</div>
+<h1>Learn laravel</h1>
 
 @endsection

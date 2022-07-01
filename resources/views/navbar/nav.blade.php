@@ -17,9 +17,6 @@
    
         <ul class="navbar-nav ms-auto">
 
-            <li class="nav-item">
-                <a class="nav-link" href="{{('/abouts') }}">About</a>
-            </li>
         
         @if (Route::has('login'))
         @auth

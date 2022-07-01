@@ -8,6 +8,6 @@ class DemosettingController extends Controller
 {
     public function index()
     {
-        return view('user.profile');
+        return view('demo');
     }
 }

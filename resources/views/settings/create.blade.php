@@ -15,23 +15,14 @@
                     <div class="card" style="width: 100%;">
                         
                         <div class="card-body">
-                            <h5 class="card-title">Change password</h5>
+                           
+                            <div class="card-header">
+                                <h5 class="card-title">Change password</h5>
+                            </div>
                             
-                            <form method="POST" action="{{('/create')}}">
+                            <form method="POST" action="{{route('settings.store')}}" class="mb-3">
                                 
                                 @csrf
-                              
-                                <div class="mb-3">
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                    <label for="password" class="form-label">Old password *</label>
-                                    <input type="password"  class="form-control @error('password') is-invalid @enderror" id="password" aria-describedby="password">
-                                   
-                                </div>
-
                                 <div class="mb-3">
                                     
                                     @error('password')

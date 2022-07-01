@@ -15,14 +15,17 @@
                     <div class="card" style="width: 100%;">
                         
                         <div class="card-body">
-                            <h5 class="card-title">Settings</h5>
+
+                            <h4 class="card-header mb-3">
+                                Settings
+                            </h4>
                             
-                             
-                                <a href="{{route('settings.create)}}" class="btn btn-primary">
+                            <p class="card-link">
+                                <a href="{{route('settings.create')}}" class="bg-primary text-white p-3 text-decoration-none">
                                     Change Password 
                                 </a>
-                          
-                           
+                            </p>
+                               
                         </div>
                     </div>
 
