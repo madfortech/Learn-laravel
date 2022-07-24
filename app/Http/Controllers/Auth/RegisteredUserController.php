@@ -9,6 +9,9 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Notifications\WelcomeEmailNotification;
+use Illuminate\Support\Facades\Notification;
+
 
 class RegisteredUserController extends Controller
 {
@@ -38,11 +41,17 @@ class RegisteredUserController extends Controller
             'password' => 'required|string|confirmed|min:8',
         ]);
 
+
+
         Auth::login($user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]));
+
+
+        Notification::send($user, new WelcomeEmailNotification());
+
 
         event(new Registered($user));
 

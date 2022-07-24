@@ -7,8 +7,12 @@
     "require": {
         "php": "^8.0",
         "fruitcake/laravel-cors": "v3.0.0",
-        "laravel/framework": "^9.19.0",
+        "laravel/framework": "^9.21.6",
+        "laravel/sail": "^1.15",
+        "laravel/sanctum": "^2.15",
+        "laravel/tinker": "^2.7",
         "laravel/ui": "v3.4.6",
+        "mockery/mockery": "^1.5",
         "phpunit/phpunit": "9.5.21"
     },
     "require-dev": {

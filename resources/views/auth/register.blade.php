@@ -1,40 +1,40 @@
 @extends('layouts.app')
 
-@section('title', 'Register')
-
 @section('content')
         
-@include('navbar.nav')
 
 
-<main class="py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-8">
 
-            <div class="py-5 px-3 shadow-sm">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 text-uppercase fw-bold text-center mt-2">
+                    register
+                </h1>
+                <div>
                 
 
-                    <form method="POST" action="{{ route('register') }}">
+                    <form 
+                        style="border: 1px solid rgb(77,119,255) ;"
+                        class="px-2 py-2"
+                        method="POST" 
+                        action="{{ route('register') }}">
                         @csrf 
-                        
-                        <h1 class="display-2">
-                           Register
-                        </h1>
-                        <div class="row">
-                            <label for="name">
-                                {{ __('Name *') }}
-                            </label>
+                       
+                            <div class="p-2">
+                                <label for="name" class="form-label mt-2">
+                                    {{ __('Name *') }}
+                                </label>
                             
-                            <div class="col-md-6">
+                           
                                 <input 
                                     id="name" 
                                     type="text" 
-                                    class="form-control @error('name') 
-                                    is-invalid @enderror rounded-0 border-2" 
+                                    class="   form-control form-control-sm rounded-0
+                                    @error('name') is-invalid @enderror" 
                                     name="name" 
                                     value="{{ old('name') }}" 
-                                    required autocomplete="name" 
+                                    required=""
+                                    placeholder="full name"
+                                    autocomplete="name" 
                                     autofocus>
 
                                 @error('name')
@@ -42,22 +42,23 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                           
                             </div>
-                        </div>
 
-                        <div class="row mt-3">
-                            <label for="email">
-                                {{ __('E-Mail Address *') }}
-                            </label>
-                            <div class="col-md-6">
+                            <div class="p-2">
+                                <label for="email" class="form-label mt-2">
+                                    {{ __('E-Mail Address *') }}
+                                </label>
+                            
                                 <input 
                                 id="email" 
                                 type="email" 
-                                class="form-control @error('email') is-invalid @enderror
-                                rounded-0 border-2" 
+                                class="form-control form-control-sm rounded-0
+                                @error('email') is-invalid @enderror" 
                                 name="email" 
                                 value="{{ old('email') }}" 
-                                required 
+                                required=""
+                                placeholder="mail@example.com" 
                                 autocomplete="email">
 
                                 @error('email')
@@ -68,19 +69,20 @@
                             </div>
                         </div>
 
-                        <div class="row mt-3">
-                            <label for="password">
-                                {{ __('Password *') }}
-                            </label>
+                        <div class="p-2">
+                                <label for="password" class="form-label mt-2">
+                                    {{ __('Password *') }}
+                                </label>
 
-                            <div class="col-md-6">
+                            
                                 <input 
                                 id="password" 
                                 type="password" 
-                                class="form-control @error('password') is-invalid @enderror
-                                rounded-0 border-2" 
+                                class="form-control form-control-sm rounded-0 @error('password') is-invalid @enderror" 
                                 name="password" 
-                                required 
+                                required=""
+                                placeholder="password" 
+                                minlength="8" maxlength="8"
                                 autocomplete="new-password">
 
                                 @error('password')
@@ -88,47 +90,47 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                            
                         </div>
 
-                        <div class="mt-3">
-                            <label for="password-confirm">
-                                {{ __('Confirm Password *') }}
-                            </label>
+                        <div class="p-2">
+                                <label for="password-confirm" class="form-label mt-2">
+                                    {{ __('Confirm Password *') }}
+                                </label>
 
-                            <div class="col-md-6">
+                           
                                 <input 
                                 id="password-confirm" 
                                 type="password" 
-                                class="form-control rounded-0 border-2" 
+                                class="form-control form-control-sm rounded-0 rounded-0 border-2" 
                                 name="password_confirmation" 
-                                required autocomplete="new-password">
-                            </div>
+                                required=""
+                                placeholder="confirm password" 
+                                minlength="8" maxlength="8"
+                                autocomplete="new-password">
                         </div>
 
-                        <div class="mt-3">
-                            <div class="col-md-6">
+                        <div class="p-2">
+                             
                                 <input 
                                 type="checkbox">
-                                <label for="accept">
+                                <label for="accept" class="form-label mt-2">
                                 {{ __(' Agree terms conditions') }}
                                 </label>
 
-                            </div>
                         </div>
 
-                        <div class="row mt-3">
-                            <div>
-                                <button type="submit" class="btn btn-primary rounded-0">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
+
+                        <div class="p-2 d-grid mt-2">
+                            <button class="btn btn-sm btn btn-outline-primary rounded-0" type="submit">
+                            {{ __('Register') }}
+                            </button>
                         </div>
+
+ 
                     </form>
+               </div>
             </div>
-            </div>
-        </div>
-    </div>
-</main>
+         
 
 @endsection
