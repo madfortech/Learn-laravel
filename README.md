@@ -6,7 +6,6 @@ How to use
 
 How to use
 
-
 ## Usage
 
 ~~~
@@ -16,3 +15,7 @@ Copy .env.example file to .env and edit database credentials there
 Run composer install
 Run php artisan key:generate
 ~~~
+
+https://stackoverflow.com/questions/72083968/1-warning-in-child-compilations-use-stats-children-true-resp-stats-child
+
+https://stackoverflow.com/questions/58783426/cannot-find-module-tailwindcss

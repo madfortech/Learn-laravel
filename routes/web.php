@@ -1,11 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\PhotoController;
 
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\DemosettingController;
-
-use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +18,14 @@ use GuzzleHttp\Middleware;
 */
 
 Route::get('/', function () {
+
     return view('welcome');
     
 });
 
 
- 
 
-Route::resource('posts', PostController::class);
+
 
 Route::get('/home', function () {
     return view('home');
