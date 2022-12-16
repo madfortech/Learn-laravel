@@ -1,7 +1,7 @@
     <nav class="navbar navbar-light navbar-expand-md fixed-top py-3 px-4">
         <div class="container">
             <a class="navbar-brand text-capitalize" href="{{('/')}}">
-                Learn laravel
+                Learn fresh laravel
             </a>
             <button data-bs-toggle="collapse" 
                 class="navbar-toggler border-0 rounded-0" 

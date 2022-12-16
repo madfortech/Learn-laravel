@@ -9,7 +9,7 @@
                     src="{{asset('img/img4.jpg')}}" 
                     alt="alt-image">
                 <h4 class="display-3 fw-bold py-sm-2 my-sm-2">
-                    Title
+                    post Title
                 </h4>
                 <div class="card-body">
                     <ul class="list-inline mb-2 text-muted">
