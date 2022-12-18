@@ -24,11 +24,10 @@
 
 </head>
 
-<body class="bg-orange-500">
+<body class="bg-gray-400">
     
-@include('layouts.nav')
-<main class="main mt-2">
-    <div class="container">
+<main>
+    <div>
         @yield('content')
     </div>
 </main>
