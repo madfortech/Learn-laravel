@@ -1,36 +1,24 @@
 @extends('layouts.app')
-@section('title', 'Learn Laravel')
+@section('title', 'Welcome')
 @section('content')
-<div class="row g-0">
-    <div class="col-auto col-md-6 offset-md-3">
-        <article class="py-4 px-4 article">
-            <div class="card px-md-2 py-md-2">
-                <img class="img-fluid card-img-top w-100 d-block card-img" 
-                    src="{{asset('img/img4.jpg')}}" 
-                    alt="alt-image">
-                <h4 class="display-3 fw-bold py-sm-2 my-sm-2">
-                    post Title
-                </h4>
-                <div class="card-body">
-                    <ul class="list-inline mb-2 text-muted">
-                        <li class="list-inline-item">
-                            author
-                        </li>
-                        <li class="list-inline-item">
-                            comment
-                        </li>
-                    </ul>
-                    <p class="fw-light card-text">
-                        Nullam id dolor id nibh ultricies vehicula ut id elit. Cras 
-                        justo odio, dapibus ac facilisis in, egestas eget quam. Donec id 
-                        elit non mi porta gravida at eget metus.
-                    </p>
-                    <a class="text-capitalize fw-bold link-primary card-link text-decoration-none" href="#">
-                        Readmore
-                    </a>
-                </div>
-            </div>
-        </article>
+<div class="sm:grid grid-cols-2 gap-2">
+    <div class="sm:w-4/6 mx-auto mt-16	bg-gray-100">
+        <!--  start Article -->
+        <div class="sm:px-3 p-3">
+           <a href="">
+                <h1 class="text-5xl">How to write html tutorials</h1>
+           </a>
+            <article>
+                <p class="mt-2">post created 18|12|2022</p>
+                <p class="text-lg mt-2 tracking-wide">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
+                     minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+                     consequat. Duis aute irure dolor in reprehenderit
+                </p>
+            </article>
+        </div>
+        <!--  end Article -->
     </div>
 </div>
 @endsection
