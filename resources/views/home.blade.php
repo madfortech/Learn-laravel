@@ -41,7 +41,7 @@
         <div class="sm:px-3 p-3">
             <!-- home main -->
             <div class="border-b-2">
-                <a href="{{route('posts.create')}}">add new post</a>
+                <a href="{{route('posts.create')}}">add new fresh post</a>
             </div>
         </div>
     </div>
