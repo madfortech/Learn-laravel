@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\User\HomeController;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,30 +22,20 @@ Route::get('/', function () {
     
 });
 
-Route::resource('posts', PostController::class);
 
+// Admin Route 
+Route::group(['middleware' => ['role:Super-Admin']], function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.home');    
+});
 
-Route::get('/home', function () {
-    return view('home');
-    
-})->middleware(['auth'])->name('home');
-
-
+// Auth Route 
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/user', [HomeController::class, 'index'])->name('user.home');    
+    Route::resource('posts', PostController::class);
+});
 
 require __DIR__.'/auth.php';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
