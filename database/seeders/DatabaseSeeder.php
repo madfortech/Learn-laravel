@@ -17,10 +17,10 @@ class DatabaseSeeder extends Seeder
 
     public function run()
     {
+       
         $this->call([
-           
             PermissionsDemoSeeder::class,
-             
+            PostSeeder::class,
         ]);
     }
 }

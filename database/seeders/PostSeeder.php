@@ -1,9 +1,11 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Post;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+use Faker\Generator as Faker;
 
 class PostSeeder extends Seeder
 {
@@ -13,9 +15,14 @@ class PostSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-       \App\Models\Post::factory(10)->create();
+        for ($i = 0; $i < 50; $i++) {
+            DB::table('posts')->insert([
+                'title' => $faker->sentence,
+                'description' => substr($faker->paragraph, 0, 255),
+            ]);
+        }
 
     }
 }

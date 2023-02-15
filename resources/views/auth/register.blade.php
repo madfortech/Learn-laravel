@@ -1,28 +1,28 @@
 @extends('layouts.app')
+@section('title', 'Register')
 @section('content')
-            <div class="row g-0">
-                <div class="col-md-6 offset-md-3">
-                    <h1 class="display-4 text-uppercase fw-bold text-center mt-2">
+            <div class="flex">
+                <div class="mx-auto w-7/12">
+                    <h1 class="text-center text-5xl capitalize mt-24">
                         register
                     </h1>
-                    <div>
+                    <div class="lg:w-2/4 mx-auto">
                         <form 
                             class="px-2 py-2"
                             method="POST" 
                             action="{{ route('register') }}"
-                            style="border: 1px solid rgb(77,119,255) ;">
+                            class="border-0 p-3 mt-4">
                             @csrf
 
-                            <div class="p-2">
-                                <label class="form-label mt-2" for="name">
+                            <div class="mt-2">
+                                <label for="name">
                                     {{ __('Name *') }}
                                 </label>
                                 <input 
                                 id="name" type="text" 
-                                class=" form-control form-control-sm rounded-0 
-                                @error('name') is-invalid @enderror" 
+                                class="@error('name') is-invalid @enderror w-full bg-gray-300 p-1
+                                focus:outline-none rounded-lg" 
                                 name="name" value="{{ old('name') }}" 
-                                required=""
                                 placeholder="full name" 
                                 autocomplete="name" 
                                 autofocus="">
@@ -35,17 +35,16 @@
                             </div>
                             <!-- name field -->
 
-                            <div class="p-2">
-                                <label class="form-label mt-2" for="email">
+                            <div class="mt-2">
+                                <label for="email">
                                     {{ __('Email Address*') }}
                                 </label>
                                 <input 
                                 id="email" 
                                 type="email" 
-                                class="form-control form-control-sm rounded-0 
-                                @error('email') is-invalid @enderror" 
+                                class="@error('email') is-invalid @enderror w-full bg-gray-300 p-1
+                                focus:outline-none rounded-lg" 
                                 name="email" value="{{ old('email') }}" 
-                                required=""
                                 autofocus=""
                                 placeholder="name@email.com" 
                                 autocomplete="email">
@@ -58,20 +57,18 @@
                             </div>
                             <!-- email field -->
 
-                            <div class="p-2">
-                                <label class="form-label mt-2" for="password">
+                            <div class="mt-2">
+                                <label for="password">
                                     {{ __('Password*') }}
                                 </label>
                                 <input 
                                 id="password" 
                                 type="password" 
-                                class="form-control form-control-sm rounded-0 
-                                @error('password') is-invalid @enderror" 
+                                class="@error('password') is-invalid @enderror w-full bg-gray-300 p-1
+                                focus:outline-none rounded-lg" 
                                 name="password" 
-                                required=""
                                 autofocus=""
                                 placeholder="new password"
-                                minlength="8" maxlength="8"
                                 autocomplete="new-password">
 
                                 @error('password')
@@ -82,28 +79,40 @@
                             </div>
                             <!-- password field -->
 
-                            <div class="p-2">
-                                <label class="form-label mt-2" for="password-confirm">
+                            <div class="mt-2">
+                                <label for="password-confirm">
                                     {{ __('Password*') }}
                                 </label>
                                 <input 
                                 id="password-confirm" 
-                                type="password" class="form-control" 
+                                type="password"
                                 name="password_confirmation" 
-                                required=""
-                                minlength="8" maxlength="8"
                                 autofocus=""
+                                class="w-full bg-gray-300 p-1
+                                focus:outline-none rounded-lg" 
                                 placeholder="confirm password"
                                 autocomplete="new-password">
                             </div>
                             <!-- password confirm field -->
- 
-                            <div class="p-2 d-grid mt-2">
-                                <button class="btn btn-sm btn btn-outline-primary rounded-0" type="submit">
+
+                            
+                            <div class="mt-2">
+                                <button type="submit" 
+                                    class="w-full bg-gray-900 p-1 capitalize text-white rounded-lg
+                                    hover:bg-gray-700">
                                     {{ __('Register') }}
                                 </button>
                             </div>
+                            <!-- button -->
+  
                         </form>
+
+                        <div class="text-center">
+                            all ready have an account
+                            <a class="text-blue-900" href="{{route('login')}}">
+                                login
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

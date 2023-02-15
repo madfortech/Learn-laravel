@@ -1,61 +1,42 @@
-    <nav class="navbar navbar-light navbar-expand-md fixed-top py-3 px-4">
-        <div class="container">
-            <a class="navbar-brand text-capitalize" href="{{('/')}}">
-                Learn fresh laravel
-            </a>
-            <button data-bs-toggle="collapse" 
-                class="navbar-toggler border-0 rounded-0" 
-                data-bs-target="#navcol-1">
-                <span class="visually-hidden">Toggle navigation</span>
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav ms-auto p-3">
-                @auth
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{('/home')}}">
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
-                            {{ Auth::user()->email }}   
-                        </a>
-                        <div class="dropdown-menu my-4">
-                            <a class="dropdown-item" href="#">
-                                Edit profile
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                Settings
-                            </a>
-                           
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <a class="dropdown-item" href="route('logout')"
-                                    onclick="event.preventDefault();
-                                    this.closest('form').submit();">
-                                    Logout
-                                </a>
-                            </form>
-                        </div>
-                    </li>
+<nav class="bg-gray-900 p-6">
+  <div class="container mx-auto flex items-center justify-between">
+    <a href="{{('/')}}" class="text-white font-bold text-xl">
+        Your Brand
+    </a>
+    <div class="flex  items-center">
+        <ul class="text-white inline-block">
+            @auth
+            <li>
+                <a href="{{route('user.home')}}">
+                    home  
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    {{ Auth::user()->email }}   
+                </a>
+            </li>
+            <li>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a href="route('logout')"
+                        onclick="event.preventDefault();
+                        this.closest('form').submit();">
+                        logout  
+                    </a>
+                </form>
+            </li>
+            @else
+            <li>
+                <a href="{{route('login')}}">
+                    login
+                </a>
+            </li>
+            @endauth
+        </ul>
+    </div>
+  </div>
+</nav>
 
-                    @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{('login')}}">
-                            Login
-                        </a>
-                    </li>
-                   
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{('register')}}">
-                            Register
-                        </a>
-                    </li>
-                </ul>
-                @endauth
-            </div>
-        </div>
-    </nav>
-    <!--End Navbar section-->
- 
+
+  

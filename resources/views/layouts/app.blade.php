@@ -25,7 +25,7 @@
 </head>
 
 <body class="bg-gray-400">
-    
+    @include('layouts.nav')
 <main>
     <div>
         @yield('content')
@@ -33,6 +33,8 @@
 </main>
     
 
-<script src="{{ mix('js/app.js') }}" defer></script>
+<!-- <script src="{{ mix('js/app.js') }}" defer></script> -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </body>
 </html>
