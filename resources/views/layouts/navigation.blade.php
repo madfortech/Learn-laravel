@@ -19,8 +19,14 @@
                         @else
                         <x-nav-link :href="route('user.dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
-                    </x-nav-link>
+                        </x-nav-link>
                     @endrole
+                    <x-nav-link :href="route('post.index')" :active="request()->routeIs('post.index')">
+                        {{ __('posts') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('post.create')" :active="request()->routeIs('post.create')">
+                        {{ __('create post') }}
+                    </x-nav-link>
                 </div>
             </div>
 
