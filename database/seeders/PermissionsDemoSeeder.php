@@ -28,7 +28,7 @@ class PermissionsDemoSeeder extends Seeder
         ]);
         $user->assignRole($role1);
 
-        $role2 = Role::create(['name' => 'Super-Admin']);
+        $role2 = Role::create(['name' => 'admin']);
         $user = \App\Models\User::factory()->create([
             'name' => 'admin',
             'email' => 'admin@example.com',

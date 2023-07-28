@@ -16,6 +16,10 @@ Run composer install
 Run php artisan key:generate
 ~~~
 
-https://stackoverflow.com/questions/72083968/1-warning-in-child-compilations-use-stats-children-true-resp-stats-child
+https://play.tailwindcss.com/eg5pxCHRod // Navbar
 
-https://stackoverflow.com/questions/58783426/cannot-find-module-tailwindcss
+https://play.tailwindcss.com/7IOz7dEONk // Card
+
+https://play.tailwindcss.com/hqvpaZ5QjN // Footer
+
+https://play.tailwindcss.com/j0PDGyqE3U // Section
