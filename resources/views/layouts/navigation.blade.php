@@ -12,15 +12,10 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    @role('admin')
-                        <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Dashboard') }}
-                        </x-nav-link>
-                        @else
-                        <x-nav-link :href="route('user.dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('user.dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
-                        </x-nav-link>
-                    @endrole
+                    </x-nav-link>
+ 
                   
                 </div>
             </div>
@@ -74,15 +69,9 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            @role('admin')
-                <x-responsive-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
-                </x-responsive-nav-link>
-            @else
-                <x-responsive-nav-link :href="route('user.dashboard')" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
-                </x-responsive-nav-link>
-            @endrole
+            <x-responsive-nav-link :href="route('user.dashboard')" :active="request()->routeIs('dashboard')">
+                {{ __('Dashboard') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

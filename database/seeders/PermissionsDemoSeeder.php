@@ -17,24 +17,24 @@ class PermissionsDemoSeeder extends Seeder
     public function run()
     {
         // Reset cached roles and permissions
-        app()[PermissionRegistrar::class]->forgetCachedPermissions();
+        // app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         // create demo users
-        $role1 = Role::create(['name' => 'user']);
-        $user = \App\Models\User::factory()->create([
-            'name' => 'user',
-            'email' => 'user@example.com',
-            'password' =>Hash::make('password'),
-        ]);
-        $user->assignRole($role1);
+        // $role1 = Role::create(['name' => 'user']);
+        // $user = \App\Models\User::factory()->create([
+        //     'name' => 'user',
+        //     'email' => 'user@example.com',
+        //     'password' =>Hash::make('password'),
+        // ]);
+        // $user->assignRole($role1);
 
-        $role2 = Role::create(['name' => 'admin']);
-        $user = \App\Models\User::factory()->create([
-            'name' => 'admin',
-            'email' => 'admin@example.com',
-            'password' =>Hash::make('password'),
-        ]);
-        $user->assignRole($role2);
+        // $role2 = Role::create(['name' => 'admin']);
+        // $user = \App\Models\User::factory()->create([
+        //     'name' => 'admin',
+        //     'email' => 'admin@example.com',
+        //     'password' =>Hash::make('password'),
+        // ]);
+        // $user->assignRole($role2);
 
     }
 }

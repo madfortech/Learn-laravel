@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
+// use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Route;
+ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +21,9 @@ Route::get('/', function () {
 });
 
 
-Route::group(['middleware' => ['auth','role:admin']], function () {
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
-});
+// Route::group(['middleware' => ['auth']], function () {
+//     Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
+// });
 
 Route::group(['middleware' => ['auth']], function () {
     // Route::get('/dashboard', function () {
@@ -32,6 +32,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('user.dashboard');
 });
 
+ 
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
