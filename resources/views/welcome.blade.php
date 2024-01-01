@@ -1,6 +1,17 @@
-@extends('layouts.user')
-@section('title', 'Welcome')
-@section('content')
+<x-app-layout>
+  <x-slot name="header">
+      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+          {{ __('Welcome learn') }}
+      </h2>
+  </x-slot>
 
-  <h2 class="bg-red-900">welcome</h2>
-@endsection
+  <div class="py-12">
+      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+          <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+              <div class="p-6 text-gray-900">
+                  {{ __("You're welcome page!") }}
+              </div>
+          </div>
+      </div>
+  </div>
+</x-app-layout>

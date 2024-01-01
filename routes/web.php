@@ -1,9 +1,9 @@
 <?php
 
-// use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\HomeController;
- use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,23 +16,34 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 
-// Route::group(['middleware' => ['auth']], function () {
-//     Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
-// });
-
-Route::group(['middleware' => ['auth']], function () {
-    // Route::get('/dashboard', function () {
-    //     return view('dashboard')->name('user.dashboard');
-    // });
-    Route::get('/dashboard', [HomeController::class, 'index'])->name('user.dashboard');
+Route::group(['middleware' => ['role:Super-Admin']], function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
 });
 
- 
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/posts', [PostController::class, 'create']);
+
+});
+
+Route::get('/posts/index', [PostController::class, 'index']);
+Route::post('/posts', [PostController::class, 'store']);
+Route::get('/posts/{post}/{id}', [PostController::class, 'show'])->name('post.show');
+Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
+Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
+
+
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -42,4 +53,3 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-  
